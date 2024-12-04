@@ -33,7 +33,7 @@ const LoginSignUp: React.FC = () => {
         <div className="auth-body">
           {activeTab === "login" ? (
             <form className="auth-form">
-              <h2 className="auth-title">👋Welcome to LevelUP🚀</h2>
+              <h2 className="auth-title">👋Welcome to LevelUP!</h2>
               <div className="auth-input-group">
                 <label className="auth-label">Username</label>
                 <input
@@ -50,7 +50,7 @@ const LoginSignUp: React.FC = () => {
                   className="auth-input"
                 />
               </div>
-              <p className="auth-link">Forget password</p>
+              <p className="auth-link">Forgot password</p>
               <button className="auth-button">Login</button>
             </form>
           ) : (
