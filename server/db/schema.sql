@@ -1,3 +1,5 @@
+CREATE DATABASE Level_up_data;
+
 DROP TABLE IF EXISTS users, classes, bookings;
 
 CREATE TABLE Users (
