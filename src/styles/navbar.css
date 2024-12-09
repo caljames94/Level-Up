@@ -1,0 +1,40 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px; 
+  background-color: #333;
+  color: white;
+  margin: 0 auto; 
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-links li {
+  padding: 5px 10px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+  color: #6ee2f5; /* Hover effect for navbar links */
+}
+
+/* Navbar Logo */
+.navbar-logo img {
+  width: 55px;  /*  width  */
+  height: auto;  /* Maintain aspect ratio */
+}

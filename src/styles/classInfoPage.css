@@ -1,0 +1,126 @@
+.class-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #007bff; /* Blue border color */
+  border-radius: 10px;
+  background-color: #1e1e1e;
+}
+
+.class-info-columns {
+   display: flex;
+   width: 100%;
+   gap: 20px;
+ }
+ 
+ .class-info-column {
+   flex: 1;
+   width: 50%;
+ }
+ 
+ @media (max-width: 768px) {
+   .class-info-columns {
+     flex-direction: column;
+   }
+ 
+   .class-info-column {
+     width: 100%;
+   }
+ }
+
+ .class-info-container h1 {
+   font-size: 40px;
+   color: #fff;
+   margin-bottom: 50px;
+   text-align: left;
+   align-self: flex-start;
+   width: 100%;
+ }
+
+ .class-info-container:hover {
+   box-shadow: 0 0 25px rgba(110, 226, 245, 0.8), 0 0 15px rgba(110, 226, 245, 0.6); 
+ }
+
+ .class-info-column h2 {
+   font-size: 32px;
+   font-weight: bold;
+   color: #007bff; 
+   margin-bottom: 20px;
+ }
+ 
+ .class-info-column h2 p {
+   font-size: 26px;
+   font-weight: normal;
+   color: #ffffff;
+   margin-top: 5px;
+   margin-bottom: 15px;
+ }
+ 
+ .class-info-column h3 {
+   font-size: 24px;
+   font-weight: bold;
+   color: #007bff;
+   margin-bottom: 5px;
+ }
+ 
+ .class-info-column h3 p {
+   font-size: 20px;
+   font-weight: normal;
+   color: #ffffff;
+   margin-top: 5px;
+   margin-bottom: 15px;
+ }
+ 
+ .class-info-column img {
+   width: 100%;
+   height: auto;
+   border-radius: 10px;
+   margin-bottom: 10px;
+ }
+
+ .class-info-buttons {
+   display: flex;
+   width: 100%;
+ }
+ 
+ .join-class-button {
+   padding: 10px 20px;
+   font-size: 16px;
+   font-weight: bold;
+   color: #ffffff;
+   /* border: none; */
+   border-radius: 5px;
+   cursor: pointer;
+   background-color: #007bff;
+ }
+
+ .different-class-button {
+   padding: 10px 20px;
+   font-size: 16px;
+   font-weight: bold;
+   color: #ffffff;
+   /* border: none; */
+   border-radius: 5px;
+   cursor: pointer;
+   background-color: red;
+ }
+ 
+ @media (max-width: 768px) {
+   .class-info-buttons {
+     flex-direction: column;
+     gap: 10px;
+     
+   }
+ 
+   .join-class-button {
+     width: 100%;
+   }
+
+   .different-class-button {
+      width: 100%;
+   }
+ }
