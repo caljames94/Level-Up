@@ -1,4 +1,4 @@
-CREATE DATABASE Level_up_data;
+CREATE DATABASE level_up_db;
 
 DROP TABLE IF EXISTS users, classes, bookings;
 
