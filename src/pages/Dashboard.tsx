@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import "./Dashboard.css";
+import "../styles/Dashboard.css";
 import logo from "/images/logo.png";
+import "../styles/navbar.css";
+
 
 const Dashboard: React.FC = () => {
   const [level, setLevel] = useState(0);

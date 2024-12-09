@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import "./LoginSignUp.css";
+import "../styles/LoginSignUp.css";
+import "../styles/navbar.css";
+
 
 const LoginSignUp: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"login" | "signup">("login");
