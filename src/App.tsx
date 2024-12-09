@@ -4,6 +4,7 @@ import Login from './pages/LoginSignUp';
 import Dashboard from './pages/Dashboard';
 import ClassInfoPage from './pages/ClassInfoPage';
 
+
 const App: React.FC = () => {
   return (
     <Router>
