@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './assets/LoginSignUp';
-import Dashboard from './assets/Dashboard';
+import Login from './pages/LoginSignUp';
+import Dashboard from './pages/Dashboard';
 import ClassInfoPage from './pages/ClassInfoPage';
+
 
 const App: React.FC = () => {
   return (
