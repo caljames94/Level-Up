@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Dashboard.css";
-import logo from "/images/logo.png";
+import logo from "../assets/images/logo.png";
 import "../styles/navbar.css";
 
 

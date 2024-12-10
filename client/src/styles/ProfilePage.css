@@ -1,102 +1,107 @@
 /* Wrapper */
-.app-wrapper {
+.profile-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  
+  background-color: #1e1e1e; /* Background for the page */
 }
-  
-  /* Container */
-  .profile-container {
-    width: 100%;
-    max-width: 420px;
-    background: #1e1e1e;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    padding: 20px;
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease;
-  }
-  
-  .profile-container:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(110, 226, 245, 0.8), 0 0 15px rgba(110, 226, 245, 0.6);
-  }
-  
-  /* Profile Header */
-  .profile-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .profile-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #6ee2f5; /* Glow border */
-    margin-right: 20px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-  }
-  
-  .profile-image:hover {
-    transform: scale(1.1);
-    border-color: rgba(255, 255, 255, 0.8);
-  }
-  
-  .profile-info {
-    color: #fff;
-  }
-  
-  .profile-info h1 {
-    font-size: 22px;
-    margin: 0;
-  }
-  
-  .profile-info p {
-    font-size: 14px;
-    color: #aaa;
-    margin: 5px 0 0;
-  }
-  
-  /* Class Schedule */
-  .class-schedule {
-    margin-top: 20px;
-  }
-  
-  .class-schedule h2 {
-    color: #fff;
-    font-size: 18px;
-    border-bottom: 2px solid #6ee2f5;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-  }
-  
-  .class-item {
-    background: #292929;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 10px;
-    color: #fff;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .class-item:hover {
-    background-color: #363636;
-    transform: scale(1.02);
-  }
-  
-  .class-item h3 {
-    margin: 0 0 5px;
-    font-size: 16px;
-  }
-  
-  .class-item p {
-    margin: 2px 0;
-    font-size: 14px;
-    color: #ccc;
-  }
-  
+
+/* Container */
+.profile-container {
+  width: 100%;
+  max-width: 420px;
+  background: #2a2a2a;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(110, 226, 245, 0.8), 0 0 15px rgba(110, 226, 245, 0.6);
+}
+
+/* Header Section */
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 3px solid #6ee2f5; /* Add border for emphasis */
+  box-shadow: 0 0 10px rgba(110, 226, 245, 0.5);
+}
+
+.profile-info {
+  color: #fff;
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.profile-address {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* Class Schedule Section */
+.class-schedule {
+  margin-top: 20px;
+}
+
+.class-schedule h2 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.class-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.class-item {
+  background: #333;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.class-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 10px rgba(110, 226, 245, 0.4);
+}
+
+.class-item h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #6ee2f5;
+}
+
+.class-item p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.class-item strong {
+  font-weight: bold;
+  color: #fff;
+}
