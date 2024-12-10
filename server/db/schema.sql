@@ -1,9 +1,12 @@
 CREATE DATABASE level_up_db;
+CREATE DATABASE level_up_db;
 
-DROP TABLE IF EXISTS users, classes, bookings;
+\c level_up_db;
 
 CREATE TABLE Users (
-    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id SERIAL PRIMARY KEY, -- Replaced AUTO_INCREMENT with SERIAL
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
     date_of_birth DATE DEFAULT NULL,
@@ -11,13 +14,12 @@ CREATE TABLE Users (
     profile_picture_url VARCHAR(255)
 );
 
-
 CREATE TABLE Classes (
-    class_id INT AUTO_INCREMENT PRIMARY KEY,
+    class_id SERIAL PRIMARY KEY, -- Replaced AUTO_INCREMENT with SERIAL
     class_name VARCHAR(100) NOT NULL,
     description TEXT,
-    start_time DATETIME NOT NULL,
-    end_time DATETIME NOT NULL,
+    start_time TIMESTAMP NOT NULL, -- Replaced DATETIME with TIMESTAMP
+    end_time TIMESTAMP NOT NULL,   -- Replaced DATETIME with TIMESTAMP
     location VARCHAR(100),
     capacity INT NOT NULL,
     current_bookings INT DEFAULT 0,
@@ -25,7 +27,7 @@ CREATE TABLE Classes (
 );
 
 CREATE TABLE Bookings (
-    booking_id INT AUTO_INCREMENT PRIMARY KEY,
+    booking_id SERIAL PRIMARY KEY, -- Replaced AUTO_INCREMENT with SERIAL
     user_id INT NOT NULL,
     class_id INT NOT NULL,
     booking_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
