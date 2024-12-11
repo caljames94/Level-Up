@@ -1,10 +1,16 @@
-CREATE DATABASE level_up_db;
+DROP DATABASE IF EXISTS level_up_db;
 CREATE DATABASE level_up_db;
 
 \c level_up_db;
 
+-- Drop tables if they exist (reverse dependency order)
+DROP TABLE IF EXISTS Bookings CASCADE;
+DROP TABLE IF EXISTS Classes CASCADE;
+DROP TABLE IF EXISTS Users CASCADE;
+
+-- Create Users table
 CREATE TABLE Users (
-    user_id SERIAL PRIMARY KEY, -- Replaced AUTO_INCREMENT with SERIAL
+    user_id SERIAL PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
@@ -14,35 +20,33 @@ CREATE TABLE Users (
     profile_picture_url VARCHAR(255)
 );
 
+-- Create Classes table
 CREATE TABLE Classes (
-    class_id SERIAL PRIMARY KEY, -- Replaced AUTO_INCREMENT with SERIAL
+    class_id SERIAL PRIMARY KEY,
     class_name VARCHAR(100) NOT NULL,
+    instructor VARCHAR(100) NOT NULL,
+    difficulty VARCHAR(100) NOT NULL,
     description TEXT,
-    start_time TIMESTAMP NOT NULL, -- Replaced DATETIME with TIMESTAMP
-    end_time TIMESTAMP NOT NULL,   -- Replaced DATETIME with TIMESTAMP
+    start_time TIMESTAMP NOT NULL,
+    end_time TIMESTAMP NOT NULL,
     location VARCHAR(100),
     capacity INT NOT NULL,
     current_bookings INT DEFAULT 0,
-    CONSTRAINT chk_capacity CHECK (capacity >= 0 AND current_bookings <= capacity)
+    CONSTRAINT chk_capacity CHECK (capacity >= 0 AND current_bookings <= capacity),
+    CONSTRAINT chk_time_range CHECK (start_time < end_time)
 );
 
+-- Create Bookings table
 CREATE TABLE Bookings (
-    booking_id SERIAL PRIMARY KEY, -- Replaced AUTO_INCREMENT with SERIAL
+    booking_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL,
     class_id INT NOT NULL,
     booking_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (class_id) REFERENCES Classes(class_id) ON DELETE CASCADE,
-    UNIQUE (user_id, class_id) -- Ensures a user can only book a class once
+    UNIQUE (user_id, class_id)
 );
 
--- Optional do we need this table?
-
--- CREATE TABLE Profiles (
---     profile_id INT AUTO_INCREMENT PRIMARY KEY,
---     user_id INT NOT NULL UNIQUE,
---     bio TEXT,
---     preferences JSON,
---     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
--- );
-
+-- Add indexes for performance optimization
+CREATE INDEX idx_user_email ON Users(email);
+CREATE INDEX idx_booking_class_id ON Bookings(class_id);
