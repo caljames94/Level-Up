@@ -1,9 +1,10 @@
 -- Insert data into Users table
-INSERT INTO Users (first_name, last_name, email, password_hash, date_of_birth, profile_picture_url)
+INSERT INTO Users (user_id,first_name, last_name, email, password_hash, profile_picture_url)
 VALUES 
-('Alice', 'Smith', 'alice.smith@example.com', 'hashedpassword1', '1990-01-15', 'https://example.com/alice.jpg'),
-('Bob', 'Johnson', 'bob.johnson@example.com', 'hashedpassword2', '1985-06-20', NULL),
-('Charlie', 'Brown', 'charlie.brown@example.com', 'hashedpassword3', '1992-09-30', 'https://example.com/charlie.jpg');
+(1, 'Alice', 'Smith', 'alice.smith@example.com', 'hashedpassword1', 'https://example.com/alice.jpg'),
+(2, 'Bob', 'Johnson', 'bob.johnson@example.com', 'hashedpassword2', NULL),
+(3, 'Charlie', 'Brown', 'charlie.brown@example.com', 'hashedpassword3', 'https://example.com/charlie.jpg');
+(4,'David', 'Williams', 'david.williams@example.com', 'hashedpassword4', 'https://example.com/david.jpg');
 
 -- Insert data into Classes table
 INSERT INTO Classes (class_name, instructor, difficulty, description, start_time, end_time, location, capacity, current_bookings)
