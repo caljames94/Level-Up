@@ -15,7 +15,6 @@ CREATE TABLE Users (
     last_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
-    date_of_birth DATE DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     profile_picture_url VARCHAR(255)
 );
@@ -29,7 +28,7 @@ CREATE TABLE Classes (
     description TEXT,
     start_time TIMESTAMP NOT NULL,
     end_time TIMESTAMP NOT NULL,
-    location VARCHAR(100),
+    location VARCHAR(100) NOT NULL,
     capacity INT NOT NULL,
     current_bookings INT DEFAULT 0,
     CONSTRAINT chk_capacity CHECK (capacity >= 0 AND current_bookings <= capacity),
