@@ -1,9 +1,5 @@
-//A model represents a table in the database. Instances of this class represents a row in the table.
-
-//Imported DataTypes from Sequalize
 import { DataTypes, Sequelize, Model } from'sequelize';
 
-// Created an interface that contains the structure for the User table that we will create.
 interface UserAttributes {
     user_id: number;
     first_name: string;
@@ -13,8 +9,7 @@ interface UserAttributes {
     profile_picture_url?: string;
 }
 
-// Then created another attribute 'UserCreationAttributes' which means whenever a user is created it is going to use the UserAttributes structure.
-interface UserCreationAttributes extends UserAttributes {}
+interface UserCreationAttributes extends Omit<UserAttributes, 'user_id'> {}
 
 export class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
     public user_id!: number;
@@ -28,7 +23,6 @@ export class User extends Model<UserAttributes, UserCreationAttributes> implemen
     public readonly updatedAt!: Date;
 }
 
-//Then creared a function where we are initialising a book. The we have different colums with their own types. User.init maps the table (model) to the database table. It accepts two arguments, the first one is going to use the UserAttributes interface to the databse columns where we have all the details mentioned.
 export function UserFactory(sequelize: Sequelize): typeof User {
     User.init(
         {
@@ -58,7 +52,7 @@ export function UserFactory(sequelize: Sequelize): typeof User {
                 type: DataTypes.STRING,
                 defaultValue: null,
             },
-        }, { //Created configurations related to the table
+        }, { 
             sequelize,
             timestamps: true,
             underscored: true,
