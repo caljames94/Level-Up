@@ -132,7 +132,7 @@ npm run dev
 
 The app is deployed on Render, providing a production environment where both the backend API and PostgreSQL database are hosted.
 
-Live App URL: [live URL here]
+Live App URL: [Coming Soon...]
 
 ## Collaboration:
 
