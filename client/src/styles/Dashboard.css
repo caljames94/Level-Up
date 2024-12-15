@@ -2,9 +2,9 @@
 .app-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Aligns content closer to the top */
   min-height: 100vh;
-  padding: 20px;
+  padding: 60px 20px; /* Increased top padding for better spacing */
 }
 
 /* Container */
@@ -15,7 +15,7 @@
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* shadow for depth */
   overflow: hidden;
-  padding: 20px;
+  padding: 30px; /* Keeps padding consistent */
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease;
 }
 
@@ -28,14 +28,14 @@
 .dashboard {
   color: #fff;
   font-size: 14px;
-  margin-top:20px;
-  margin-bottom: 200px;
+  margin-top: 60px; /* Increased margin-top to push content down */
+  margin-bottom: 50px; /* Reduced margin-bottom to balance spacing */
   text-align: center;
 }
 
 /* Slider */
 .slider-container {
-  margin-top: 20px;
+  margin-top: 40px; /* Push slider further down */
   text-align: center;
 }
 
@@ -110,16 +110,39 @@ input[type="range"]:hover::-webkit-slider-thumb {
 
 /* Selected Level Display */
 .selected-level {
-  margin-top: 15px;
+  margin-top: 20px; /* Increased margin above */
   text-align: center;
   color: #fff;
   font-size: 16px;
 }
+
+/* Classes List */
+.classes-list ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.classes-list li {
+  padding: 12px 0; /* Slightly increased spacing */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle divider */
+  color: #fff; /* Ensure visibility */
+}
+
+.classes-list li:last-child {
+  border-bottom: none; /* Remove the bottom border for the last item */
+}
+
+.classes-list span {
+  display: block; /* Each class property gets its own line */
+  font-size: 14px;
+}
+
 /* View Class Button Styling */
 .view-class-button-container {
   display: flex;
   justify-content: center;
-  margin-top: auto;  /* pushes the button to the bottom */
+  margin-top: 40px; /* Increased spacing above the button */
 }
 
 .view-class-button {
@@ -146,11 +169,10 @@ input[type="range"]:hover::-webkit-slider-thumb {
   outline: none;
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .app-container {
-    padding: 15px;
+    padding: 20px;
     max-width: 90%;
   }
 
