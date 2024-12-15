@@ -9,9 +9,9 @@ VALUES
 -- Insert data into Classes table
 INSERT INTO Classes (class_name, instructor, difficulty, description, start_time, end_time, location, capacity, current_bookings)
 VALUES
-('Yoga Basics', 'Emma Taylor', 'Beginner', 'A beginner yoga class to improve flexibility and reduce stress.', '2024-12-12 09:00:00', '2024-12-12 10:00:00', 'Room 101', 20, 0),
-('Advanced Pilates', 'James Wilson', 'Advanced', 'Challenging Pilates routines for experienced practitioners.', '2024-12-12 11:00:00', '2024-12-12 12:30:00', 'Room 102', 15, 0),
-('Cardio Kickboxing', 'Sophia Davis', 'Intermediate', 'A high-energy cardio class with kickboxing techniques.', '2024-12-13 18:00:00', '2024-12-13 19:00:00', 'Room 201', 25, 0);
+('Yoga Basics', 'Emma Taylor', 'Easy', 'A beginner yoga class to improve flexibility and reduce stress.', '2024-12-12 09:00:00', '2024-12-12 10:00:00', 'Room 101', 20, 0),
+('Advanced Pilates', 'James Wilson', 'Medium', 'Challenging Pilates routines for experienced practitioners.', '2024-12-12 11:00:00', '2024-12-12 12:30:00', 'Room 102', 15, 0),
+('Cardio Kickboxing', 'Sophia Davis', 'Hard', 'A high-energy cardio class with kickboxing techniques.', '2024-12-13 18:00:00', '2024-12-13 19:00:00', 'Room 201', 25, 0);
 
 -- Insert data into Bookings table
 INSERT INTO Bookings (user_id, class_id, booking_date)
