@@ -12,7 +12,6 @@ interface SignupInput {
     last_name: string;
     email: string;
     password: string;
-    // date_of_birth: string;
     profile_picture_url?: string;
 }
 
@@ -25,37 +24,26 @@ interface LoginInput {
 // Signup controller
 export const signup = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { first_name, last_name, email, password,  profile_picture_url } = req.body as SignupInput;
+        const { first_name, last_name, email, password } = req.body;
 
-        // Log incoming data
-        console.log('Received data for signup:', {
-            first_name,
-            last_name,
-            email,
-            password,
-            // date_of_birth,
-            profile_picture_url,
-        });
+        console.log('Signup request received:', req.body); // Log request data
 
         // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
+        console.log('Password hashed successfully:', hashedPassword);
 
-        // Create user in the database using Sequelize
+        // Attempt to create the user
         const newUser = await User.create({
             first_name,
             last_name,
             email,
             password_hash: hashedPassword,
-            // date_of_birth,
-            profile_picture_url,
         });
 
-        // Log inserted data
-        console.log('Inserted user data:', newUser.toJSON());
-
+        console.log('User successfully created in database:', newUser.toJSON());
         res.status(201).json({ message: 'User registered successfully', user: newUser });
     } catch (error) {
-        console.error('Error during signup:', error);
+        console.error('Error during signup:', error); // Log errors
         res.status(500).json({ error: 'Internal server error' });
     }
 };
