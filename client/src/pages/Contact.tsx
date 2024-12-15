@@ -16,7 +16,7 @@ const Contact: React.FC = () => {
             <li><Link to="/dashboard">Classes</Link></li> {/* Link to Dashboard */}
             <li><a href="/profile">Profile</a></li>
             <li><Link to="#contact">Contact</Link></li> 
-            <li><a href="#">Logout</a></li>
+            <li><a href="/login">Logout</a></li>
           </ul>
         </nav>
 

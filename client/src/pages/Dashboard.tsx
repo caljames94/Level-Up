@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/Dashboard.css";
 import logo from "../assets/images/logo.png";
 import "../styles/navbar.css";
-<<<<<<< HEAD
 import { Link } from "react-router-dom"; // Import Link for navigation
-=======
->>>>>>> 4fcbd82b045169b547651923cb96125324b0e337
 
 const Dashboard: React.FC = () => {
   const [level, setLevel] = useState(0);
@@ -71,24 +68,12 @@ const Dashboard: React.FC = () => {
           <div className="navbar-logo">
             <img src={logo} alt="Logo" className="logo-image" />
           </div>
-          <ul className="navbar-links">
-<<<<<<< HEAD
-            <li><Link to="#dashboard">Classes</Link></li> {/* Link to Dashboard */}
-            <li><a href="/profile">Profile</a></li>
-            <li><Link to="/contact">Contact</Link></li> 
-            <li><a href="#">Logout</a></li>
-=======
-            <li>
-              <a href="#home">Classes</a>
-            </li>
-            <li>
-              <a href="#profile">Profile</a>
-            </li>
-            <li>
-              <a href="#classes">Logout</a>
-            </li>
->>>>>>> 4fcbd82b045169b547651923cb96125324b0e337
-          </ul>
+<ul className="navbar-links">
+  <li><Link to="#dashboard">Classes</Link></li> {/* Link to Dashboard */}
+  <li><Link to="/profile">Profile</Link></li>
+  <li><Link to="/contact">Contact</Link></li> 
+  <li><a href="/login">Logout</a></li>
+</ul>
         </nav>
 
         <div className="dashboard">

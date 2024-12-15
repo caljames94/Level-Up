@@ -18,7 +18,7 @@ const ClassInfoPage: React.FC = () => {
             <li><a href="/dashboard">Classes</a></li>
             <li><a href="/profile">Profile</a></li>
             <li><a href="/contact">Contact</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="/login">Logout</a></li>
           </ul>
         </nav>
 

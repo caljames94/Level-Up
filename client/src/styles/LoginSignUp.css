@@ -132,7 +132,6 @@ body, html {
 
 .auth-row {
   display: flex;
-  gap: 12px;
   margin: 0 3px; /* first name and last name box Align with other input groups */
 }
 
