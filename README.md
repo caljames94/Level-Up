@@ -2,7 +2,7 @@
 
 Level Up is a dynamic fitness application that helps users choose workout classes based on their intensity preferences. Whether you’re a beginner or an experienced athlete, Level Up allows users to find and book the perfect classes tailored to their fitness needs. The app is built using modern web technologies and follows industry best practices.
 
-## Features
+## Features:
 
 - **Class Selection**: Choose classes based on intensity (Easy, Medium, High & Extreme).
 - **User Authentication**: Sign up and log in securely using JWT (JSON Web Tokens).
@@ -10,23 +10,23 @@ Level Up is a dynamic fitness application that helps users choose workout classe
 - **Responsive UI**: Fully responsive design for mobile and desktop users.
 - **Polished User Experience**: Clean, intuitive interface for easy navigation.
 
-## Technologies Used
+## Technologies Used:
 
 - **Backend**: Node.js, Express.js, PostgreSQL, Sequelize ORM, JWT Authentication
 - **Frontend**: React, TypeScript, Vite
 - **Deployment**: Render
 - **Database**: PostgreSQL
 
-## API Endpoints
+## API Endpoints:
 
 The backend API provides both **GET** and **POST** routes for retrieving and adding data, utilizing **two server-side APIs** for additional functionality.
 
 
-## Authentication
+## Authentication:
 
 JWT (JSON Web Tokens) is used for secure authentication. Users log in, and a token is issued. 
 
-## Environment Variables
+## Environment Variables:
 
 Sensitive information, like database credentials and API keys, is securely stored in environment variables.
 
@@ -35,7 +35,7 @@ Example:
 DATABASE_URL=your_database_url
 JWT_SECRET=your_jwt_secret 
 ```
-## Folder Structure
+## Folder Structure:
 
 The project follows the separation of concerns principle. The backend and frontend are organized into distinct folders, with clear responsibility separation.
 ```
@@ -85,9 +85,9 @@ The project follows the separation of concerns principle. The backend and fronte
     └── tsconfig.json
 ```
 
-# Getting Started
+# Getting Started:
 
-## Prerequisites
+## Prerequisites:
 
 -Node.js
 
@@ -97,7 +97,7 @@ The project follows the separation of concerns principle. The backend and fronte
 
 -JWT Authentication
 
-## Installation
+## Installation:
 
 1.Clone the repository:
 ```
@@ -126,20 +126,20 @@ npm run dev
 ```
 6. Open http://localhost:3000 in your browser to access the app.
 
-## Deployment
+## Deployment:
 
 The app is deployed on Render, providing a production environment where both the backend API and PostgreSQL database are hosted.
 
 Live App URL: [live URL here]
 
-## Collaboration
+## Collaboration:
 
 The project was developed collaboratively, with contributions from all group members. There are no major disparities in GitHub contributions, and tasks were shared equally among the team.
 
-## Contributing
+## Contributing:
 
 If you would like to contribute, feel free to fork the repository and submit a pull request. Please follow the project’s coding standards and provide tests for new features or bug fixes.
 
-## License
+## License:
 
 This project is licensed under the MIT License - see the LICENSE file for details.
