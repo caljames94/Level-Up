@@ -3,8 +3,6 @@ import "../styles/LoginSignUp.css";
 import { useNavigate } from "react-router-dom";
 import { login, signup } from "../api/auth";
 import logo from "../assets/images/logo.png";
-import "../styles/LoginSignUp.css"; 
-
 
 const LoginSignUp: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"login" | "signup">("login");
@@ -12,6 +10,7 @@ const LoginSignUp: React.FC = () => {
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [profilePictureUrl, setProfilePictureUrl] = useState(""); // State for profile picture URL
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const navigate = useNavigate();
 
@@ -28,7 +27,13 @@ const LoginSignUp: React.FC = () => {
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await signup({ first_name: firstName, last_name: lastName, email, password });
+      await signup({
+        first_name: firstName,
+        last_name: lastName,
+        email,
+        password,
+        profile_picture_url: profilePictureUrl, // Pass profile picture URL
+      });
       navigate("/dashboard"); // Redirect to Dashboard page after signup
     } catch (error: any) {
       setErrorMessage(error.message || "Signup failed. Please try again.");
@@ -38,11 +43,9 @@ const LoginSignUp: React.FC = () => {
   return (
     <div className="app-wrapper">
       <div className="app-container">
-      <div className="app-header">
-          {/* Logo Image */}
+        <div className="app-header">
           <img src={logo} alt="Logo" className="app-logo" />
         </div>
-
         <div className="auth-header">
           <div
             className={`auth-tab ${activeTab === "login" ? "active" : ""}`}
@@ -57,7 +60,6 @@ const LoginSignUp: React.FC = () => {
             Sign Up
           </div>
         </div>
-
         <div className="auth-body">
           {errorMessage && <p className="auth-error">{errorMessage}</p>}
           {activeTab === "login" ? (
@@ -93,31 +95,29 @@ const LoginSignUp: React.FC = () => {
             <form className="auth-form" onSubmit={handleSignup}>
               <h2 className="auth-title">Create Your Account</h2>
               <div className="auth-row">
-  <div className="auth-input-group">
-    <label className="auth-label">First Name</label>
-    <input
-      type="text"
-      placeholder="Enter your first name"
-      className="auth-input first-name"
-      value={firstName}
-      onChange={(e) => setFirstName(e.target.value)}
-      required
-    />
-  </div>
-  <div className="auth-input-group">
-    <label className="auth-label">Last Name</label>
-    <input
-      type="text"
-      placeholder="Enter your last name"
-      className="auth-input last-name"
-      value={lastName}
-      onChange={(e) => setLastName(e.target.value)}
-      required
-    />
-  </div>
-</div>
-
-
+                <div className="auth-input-group">
+                  <label className="auth-label">First Name</label>
+                  <input
+                    type="text"
+                    placeholder="Enter your first name"
+                    className="auth-input first-name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="auth-input-group">
+                  <label className="auth-label">Last Name</label>
+                  <input
+                    type="text"
+                    placeholder="Enter your last name"
+                    className="auth-input last-name"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    required
+                  />
+                </div>
+              </div>
               <div className="auth-input-group">
                 <label className="auth-label">Email</label>
                 <input
@@ -146,6 +146,8 @@ const LoginSignUp: React.FC = () => {
                   type="url"
                   placeholder="Enter your profile picture URL"
                   className="auth-input"
+                  value={profilePictureUrl}
+                  onChange={(e) => setProfilePictureUrl(e.target.value)} // Bind to state
                 />
               </div>
               <button className="auth-button" type="submit">
