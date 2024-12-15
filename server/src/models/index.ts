@@ -3,8 +3,8 @@ import { UserFactory } from "./users.js";
 import { ClassFactory } from "./classes.js";
 
 const User = UserFactory(sequelize);
-const Classes = ClassFactory(sequelize);
+const Class = ClassFactory(sequelize);
 
 
-export { sequelize, User, Classes };
+export { sequelize, User, Class };
 

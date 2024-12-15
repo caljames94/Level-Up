@@ -1,9 +1,9 @@
 import { Router, Request, Response } from "express";
-import { Classes } from "../../models/index.js";
+import { Class } from "../../models/index.js";
 
 export const getClassDetails = async (req: Request, res: Response) => {
   try {
-    const classDetails = await Classes.findAll();
+    const classDetails = await Class.findAll();
     res.status(200).json(classDetails);
   } catch (err: any) {
     console.error(err);
@@ -13,7 +13,7 @@ export const getClassDetails = async (req: Request, res: Response) => {
 
 export const getClassSummaryDetails = async (req: Request, res: Response) => {
   try {
-    const classSummary = await Classes.findAll({
+    const classSummary = await Class.findAll({
       attributes: ["class_name", "instructor", "description", "start_time"],
     });
     res.status(200).json(classSummary);
@@ -27,8 +27,8 @@ export const getClassesByDifficulty = async (req: Request, res: Response) => {
     try {
       const { difficulty } = req.params;
       console.log(difficulty);
-      const classes = await Classes.findAll({
-        where: { difficulty: difficulty.toLowerCase() },
+      const classes = await Class.findAll({
+        where: { difficulty: difficulty },
       });
       if (classes.length === 0) {
         res.status(404).json({ message: `No ${difficulty} classes found` });

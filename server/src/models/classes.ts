@@ -11,6 +11,8 @@ interface ClassAttributes {
   location: string;
   capacity: number;
   current_bookings: number;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 interface ClassCreationAttributes extends ClassAttributes {}
