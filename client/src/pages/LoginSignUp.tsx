@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import "../styles/LoginSignUp.css";
-import "../styles/navbar.css";
 import { useNavigate } from "react-router-dom";
 import { login, signup } from "../api/auth";
 import logo from "../assets/images/logo.png";
 import "../styles/LoginSignUp.css"; 
-import { Link } from "react-router-dom"; 
+
 
 const LoginSignUp: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"login" | "signup">("login");
@@ -39,18 +38,11 @@ const LoginSignUp: React.FC = () => {
   return (
     <div className="app-wrapper">
       <div className="app-container">
-          {/* Navbar */}
-          <nav className="navbar">
-          <div className="navbar-logo">
-            <img src={logo} alt="Logo" className="logo-image" />
-          </div>
-<ul className="navbar-links">
-  <li><Link to="/dashboard">Classes</Link></li> {/* Link to Dashboard */}
-  <li><Link to="/profile">Profile</Link></li>
-  <li><Link to="/contact">Contact</Link></li> 
-  <li><a href="/login">Logout</a></li>
-</ul>
-        </nav>
+      <div className="app-header">
+          {/* Logo Image */}
+          <img src="/images/logo.png" alt="Logo" className="app-logo" />
+        </div>
+
         <div className="auth-header">
           <div
             className={`auth-tab ${activeTab === "login" ? "active" : ""}`}
