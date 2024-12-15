@@ -43,11 +43,8 @@ The project follows the separation of concerns principle. The backend and fronte
 ├── README.md
 ├── client
 │   ├── dist
-│   │   ├── assets
-│   │   └── index.html
 │   ├── eslint.config.js
 │   ├── images
-│   │   └── logo.png
 │   ├── index.html
 │   ├── node_modules
 │   ├── package-lock.json
@@ -70,14 +67,6 @@ The project follows the separation of concerns principle. The backend and fronte
 │   └── vite.config.ts
 └── server
     ├── dist
-    │   ├── config
-    │   ├── controllers
-    │   ├── middleware
-    │   ├── models
-    │   ├── routes
-    │   ├── seeds
-    │   ├── server.js
-    │   └── utils
     ├── insert_data.sql
     ├── node_modules
     ├── nodemon.json
@@ -96,9 +85,9 @@ The project follows the separation of concerns principle. The backend and fronte
     └── tsconfig.json
 ```
 
-## Getting Started
+# Getting Started
 
-# Prerequisites
+## Prerequisites
 
 -Node.js
 
@@ -108,7 +97,7 @@ The project follows the separation of concerns principle. The backend and fronte
 
 -JWT Authentication
 
-# Installation
+## Installation
 
 1.Clone the repository:
 ```
