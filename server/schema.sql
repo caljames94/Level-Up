@@ -26,8 +26,8 @@ CREATE TABLE Classes (
     instructor VARCHAR(100) NOT NULL,
     difficulty VARCHAR(100) NOT NULL,
     description TEXT,
-    start_time STRING NOT NULL,
-    end_time STRING NOT NULL,
+    start_time TIME NOT NULL, -- Fixed from STRING to TIME
+    end_time TIME NOT NULL,   -- Fixed from STRING to TIME
     location VARCHAR(100) NOT NULL,
     capacity INT NOT NULL,
     current_bookings INT DEFAULT 0,
@@ -45,7 +45,3 @@ CREATE TABLE Bookings (
     FOREIGN KEY (class_id) REFERENCES Classes(class_id) ON DELETE CASCADE,
     UNIQUE (user_id, class_id)
 );
-
--- Add indexes for performance optimization
-CREATE INDEX idx_user_email ON Users(email);
-CREATE INDEX idx_booking_class_id ON Bookings(class_id);

@@ -1,21 +1,40 @@
 import React, { useState } from "react";
-import "../styles/LoginSignUp.css";
-import "../styles/navbar.css";
-
+import { useNavigate } from "react-router-dom";
+import { login, signup } from "../api/auth";
+import "../styles/LoginSignUp.css"; // Ensure this is the correct path to your CSS
 
 const LoginSignUp: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"login" | "signup">("login");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await login({ email, password });
+      navigate("/dashboard"); // Redirect to Dashboard page after login
+    } catch (error: any) {
+      setErrorMessage(error.message || "Login failed. Please try again.");
+    }
+  };
+
+  const handleSignup = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await signup({ first_name: firstName, last_name: lastName, email, password });
+      navigate("/dashboard"); // Redirect to Dashboard page after signup
+    } catch (error: any) {
+      setErrorMessage(error.message || "Signup failed. Please try again.");
+    }
+  };
 
   return (
     <div className="app-wrapper">
       <div className="app-container">
-        {/* App Header */}
-        <div className="app-header">
-          {/* Logo Image */}
-          <img src="/images/logo.png" alt="Logo" className="app-logo" />
-        </div>
-
-        {/* Tabs */}
         <div className="auth-header">
           <div
             className={`auth-tab ${activeTab === "login" ? "active" : ""}`}
@@ -31,17 +50,20 @@ const LoginSignUp: React.FC = () => {
           </div>
         </div>
 
-        {/* Form Body */}
         <div className="auth-body">
+          {errorMessage && <p className="auth-error">{errorMessage}</p>}
           {activeTab === "login" ? (
-            <form className="auth-form">
-              <h2 className="auth-title">👋Welcome to LevelUP!</h2>
+            <form className="auth-form" onSubmit={handleLogin}>
+              <h2 className="auth-title">Welcome Back!</h2>
               <div className="auth-input-group">
-                <label className="auth-label">Username</label>
+                <label className="auth-label">Email</label>
                 <input
-                  type="text"
-                  placeholder="Enter your username"
+                  type="email"
+                  placeholder="Enter your email"
                   className="auth-input"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
               <div className="auth-input-group">
@@ -50,20 +72,38 @@ const LoginSignUp: React.FC = () => {
                   type="password"
                   placeholder="Enter your password"
                   className="auth-input"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </div>
-              <p className="auth-link">Forgot password</p>
-              <button className="auth-button">Login</button>
+              <button className="auth-button" type="submit">
+                Login
+              </button>
             </form>
           ) : (
-            <form className="auth-form">
-              <h2 className="auth-title">Create your account</h2>
+            <form className="auth-form" onSubmit={handleSignup}>
+              <h2 className="auth-title">Create Your Account</h2>
               <div className="auth-input-group">
-                <label className="auth-label">Username</label>
+                <label className="auth-label">First Name</label>
                 <input
                   type="text"
-                  placeholder="Enter your username"
+                  placeholder="Enter your first name"
                   className="auth-input"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="auth-input-group">
+                <label className="auth-label">Last Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter your last name"
+                  className="auth-input"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
                 />
               </div>
               <div className="auth-input-group">
@@ -72,6 +112,9 @@ const LoginSignUp: React.FC = () => {
                   type="email"
                   placeholder="Enter your email"
                   className="auth-input"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
               <div className="auth-input-group">
@@ -80,9 +123,14 @@ const LoginSignUp: React.FC = () => {
                   type="password"
                   placeholder="Enter your password"
                   className="auth-input"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </div>
-              <button className="auth-button">Sign Up</button>
+              <button className="auth-button" type="submit">
+                Sign Up
+              </button>
             </form>
           )}
         </div>
