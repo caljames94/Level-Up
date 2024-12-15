@@ -28,11 +28,9 @@ export const getUserById = async (req: Request, res: Response) => {
     };
 }
 
-
-
 const router = Router();
 
 router.get("/", getAllUsers);
-router.get("/:id", getUserById); //Not sure why this is throwing an error. I think it is a type error but can't figure out how to fix it. Is it to do with returning a number rather than a string?
+router.get("/:id", getUserById); 
 
 export {router as userRouter};
