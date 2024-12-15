@@ -1,0 +1,1 @@
+//Create a table layout that contains userID and classID. Have to add contraints of foreign key inside this model.

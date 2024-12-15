@@ -6,11 +6,13 @@ interface ClassAttributes {
   instructor: string;
   difficulty: string;
   description: string;
-  start_time: number;
-  end_time: number;
+  start_time: string;
+  end_time: string;
   location: string;
   capacity: number;
   current_bookings: number;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 interface ClassCreationAttributes extends ClassAttributes {}
@@ -22,8 +24,8 @@ export class Class extends Model<ClassAttributes, ClassCreationAttributes> imple
   public instructor!: string;
   public difficulty!: string;
   public description!: string;
-  public start_time!: number;
-  public end_time!: number;
+  public start_time!: string;
+  public end_time!: string;
   public location!: string;
   public capacity!: number;
   public current_bookings!: number;
@@ -57,11 +59,11 @@ export function ClassFactory(sequelize: Sequelize): typeof Class {
         allowNull: false,
       },
       start_time: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       end_time: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       location: {
