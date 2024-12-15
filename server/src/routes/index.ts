@@ -11,3 +11,5 @@ router.use("/api", apiRoutes);
 router.use("/api", authRoutes); // Add this line to expose /api/signup and /api/login
 
 export default router;
+
+// 
