@@ -5,6 +5,8 @@ import authRoutes from './routes/authRoutes.js';
 import routes from './routes/index.js';
 import sequelize from './config/connection.js';
 import seedClasses from './seeds/classes.js';
+import seedUsers from './seeds/users.js';
+import seedBookings from './seeds/bookings.js';
 
 // Load environment variables
 dotenv.config();
@@ -29,6 +31,8 @@ sequelize.sync() // Simple sync; tables are only created if they don't exist
 
     // Run seeds if necessary
     await seedClasses(); // Call your seeding function
+    await seedUsers();
+    await seedBookings();
 
     // Start the server
     app.listen(PORT, () => {
