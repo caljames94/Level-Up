@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../styles/LoginSignUp.css";
 import "../styles/navbar.css";
 
-
 const LoginSignUp: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"login" | "signup">("login");
 
@@ -37,10 +36,10 @@ const LoginSignUp: React.FC = () => {
             <form className="auth-form">
               <h2 className="auth-title">👋Welcome to LevelUP!</h2>
               <div className="auth-input-group">
-                <label className="auth-label">Username</label>
+                <label className="auth-label">Email</label>
                 <input
-                  type="text"
-                  placeholder="Enter your username"
+                  type="email"
+                  placeholder="Enter your email"
                   className="auth-input"
                 />
               </div>
@@ -52,19 +51,28 @@ const LoginSignUp: React.FC = () => {
                   className="auth-input"
                 />
               </div>
-              <p className="auth-link">Forgot password</p>
               <button className="auth-button">Login</button>
             </form>
           ) : (
             <form className="auth-form">
               <h2 className="auth-title">Create your account</h2>
-              <div className="auth-input-group">
-                <label className="auth-label">Username</label>
-                <input
-                  type="text"
-                  placeholder="Enter your username"
-                  className="auth-input"
-                />
+              <div className="auth-row">
+                <div className="auth-input-group">
+                  <label className="auth-label">First Name</label>
+                  <input
+                    type="text"
+                    placeholder="Enter your first name"
+                    className="auth-input"
+                  />
+                </div>
+                <div className="auth-input-group">
+                  <label className="auth-label">Last Name</label>
+                  <input
+                    type="text"
+                    placeholder="Enter your last name"
+                    className="auth-input"
+                  />
+                </div>
               </div>
               <div className="auth-input-group">
                 <label className="auth-label">Email</label>
@@ -79,6 +87,14 @@ const LoginSignUp: React.FC = () => {
                 <input
                   type="password"
                   placeholder="Enter your password"
+                  className="auth-input"
+                />
+              </div>
+              <div className="auth-input-group">
+                <label className="auth-label">Profile Picture URL</label>
+                <input
+                  type="url"
+                  placeholder="Enter your profile picture URL"
                   className="auth-input"
                 />
               </div>

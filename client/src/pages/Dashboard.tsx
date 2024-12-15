@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import "../styles/Dashboard.css";
 import logo from "../assets/images/logo.png";
 import "../styles/navbar.css";
-
+import { Link } from "react-router-dom"; // Import Link for navigation
 
 const Dashboard: React.FC = () => {
   const [level, setLevel] = useState(0);
 
   const levels = ["Easy", "Medium", "Hard", "Extreme"];
 
-  // Function to get the track background color
   const getBackgroundColor = () => {
     switch (level) {
       case 1:
@@ -23,7 +22,6 @@ const Dashboard: React.FC = () => {
     }
   };
 
-  // Function to get the thumb background color
   const getThumbColor = () => {
     switch (level) {
       case 1:
@@ -44,16 +42,16 @@ const Dashboard: React.FC = () => {
   return (
     <div className="app-wrapper">
       <div className="app-container">
-        
         {/* Navbar */}
         <nav className="navbar">
           <div className="navbar-logo">
             <img src={logo} alt="Logo" className="logo-image" />
           </div>
           <ul className="navbar-links">
-            <li><a href="#home">Classes</a></li>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#classes">Logout</a></li>
+            <li><Link to="#dashboard">Classes</Link></li> {/* Link to Dashboard */}
+            <li><a href="/profile">Profile</a></li>
+            <li><Link to="/contact">Contact</Link></li> 
+            <li><a href="#">Logout</a></li>
           </ul>
         </nav>
 
@@ -98,6 +96,13 @@ const Dashboard: React.FC = () => {
                 Selected Level: <strong>{levels[level]}</strong>
               </p>
             </div>
+          </div>
+
+          {/* View Class Button */}
+          <div className="view-class-button-container">
+            <Link to="/class-info">
+              <button className="view-class-button">View Class</button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles/ProfilePage.css";
 import "../styles/navbar.css";
-import logo from "/images/logo.png";
-
+import logo from "../assets/images/logo.png";
+import { Link } from "react-router-dom"; // Import Link for navigation
 
 type ClassSchedule = {
   id: number;
@@ -28,9 +28,10 @@ const ProfilePage: React.FC<{ user: UserProfile }> = ({ user }) => {
             <img src={logo} alt="Logo" className="logo-image" />
           </div>
           <ul className="navbar-links">
-            <li><a href="#home">Classes</a></li>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#classes">Logout</a></li>
+            <li><Link to="/dashboard">Classes</Link></li> {/* Link to Dashboard */}
+            <li><Link to="/profile">Profile</Link></li> {/* Link to ProfilePage */}
+            <li><Link to="/contact">Contact</Link></li> {/* Link to Contact page */}
+            <li><a href="#">Logout</a></li>
           </ul>
         </nav>
         <div className="profile-header">

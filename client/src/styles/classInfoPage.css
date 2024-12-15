@@ -82,43 +82,44 @@ h1 {
 }
 
 /* Buttons */
+/* Container for buttons */
 .class-info-buttons {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  width: 100%;
 }
 
+/* Common button styles */
 button {
-  width: calc(100% - 40px);
-  margin: 0 auto;
+  flex-grow: 1; /* Make sure the button takes up equal width */
   padding: 12px;
   font-size: 16px;
   font-weight: bold;
-  color: #6ee2f5;
-  background-color: transparent;
-  border: 2px solid #6ee2f5;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s ease-in-out, transform 0.2s ease, box-shadow 0.3s ease-in-out;
+  border: 2px solid transparent; /* Transparent border to avoid extra space */
+  min-width: 0; /* Ensure button doesn't shrink below a certain width */
 }
 
 .join-class-button {
   background-color: #6ee2f5;
   color: white;
-  border: 2px solid #6ee2f5;
+  border-color: #6ee2f5; /* Blue border for join button */
 }
 
 .different-class-button {
   background-color: red;
   color: white;
-  border: 2px solid red;
+  border-color: red; /* Red border for different class button */
 }
 
+/* Hover and focus styles */
 button:hover {
   transform: scale(1.1);
   background-color: #ffffff;
   box-shadow: 0 0 25px rgba(110, 226, 245, 0.8), 0 0 10px rgba(110, 226, 245, 0.6);
-  border-color: #6ee2f5;
   color: black;
 }
 
@@ -126,63 +127,66 @@ button:focus {
   outline: none;
 }
 
+
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
   .class-info-container {
-      max-width: 90%;
-      margin: 10px;
+    max-width: 90%;
+    margin: 10px;
   }
 
   .class-info-columns {
-      flex-direction: column;
-      gap: 15px;
+    flex-direction: column;
+    gap: 15px;
   }
 
   .class-info-column {
-      flex: 1 1 100%;
-      padding: 0.8rem;
+    flex: 1 1 100%;
+    padding: 0.8rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .class-info-container {
-      max-width: 90%;
-      margin: 10px;
-      padding: 15px;
+    max-width: 90%;
+    margin: 10px;
+    padding: 15px;
   }
 
   .class-info-columns {
-      gap: 15px;
+    gap: 15px;
   }
 
   .class-info-column {
-      flex: 1 1 100%;
+    flex: 1 1 100%;
   }
 
   button {
-      font-size: 14px;
-      width: 100%;
+    font-size: 14px;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 480px) {
   .class-info-container {
-      padding: 10px;
+    padding: 10px;
   }
 
   .class-info-header h1 {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   .class-info-column img {
-      max-width: 80%;
+    max-width: 80%;
   }
 
-  .class-info-column h2, .class-info-column h3, .class-info-column p {
-      font-size: 0.9rem;
+  .class-info-column h2,
+  .class-info-column h3,
+  .class-info-column p {
+    font-size: 0.9rem;
   }
 
   button {
-      font-size: 12px;
+    font-size: 12px;
   }
 }

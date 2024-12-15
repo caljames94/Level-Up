@@ -1,0 +1,60 @@
+/* Wrapper */
+.app-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.app-container {
+    width: 100%;
+    max-width: 420px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 20px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.app-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(110, 226, 245, 0.8), 0 0 15px rgba(110, 226, 245, 0.6);
+}
+
+/* Header */
+.contact-header {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 2px solid #333;
+}
+
+/* Contact Section */
+
+.contact-details {
+    text-align: left;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.logo {
+    width: 80%; 
+    max-width: 250px;
+    margin: 20px auto;
+    display: block;
+  }
+  
+.contact-details p {
+    margin: 0 0 10px;
+}
+
+.contact-details .contact-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #6ee2f5;
+}
+

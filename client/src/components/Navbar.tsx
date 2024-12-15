@@ -2,6 +2,7 @@ import React from 'react';
 import "../styles/navbar.css";
 import logo from "../assets/images/logo.png";
 
+
 const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
@@ -12,6 +13,7 @@ const Navbar: React.FC = () => {
       <li><a href="#home">Classes</a></li>
       <li><a href="#profile">Profile</a></li>
       <li><a href="#classes">Logout</a></li>
+      <li><a href="#classes">Contact</a></li>
     </ul>
   </nav>
   );
