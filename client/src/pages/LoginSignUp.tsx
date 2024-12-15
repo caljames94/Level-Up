@@ -40,7 +40,7 @@ const LoginSignUp: React.FC = () => {
       <div className="app-container">
       <div className="app-header">
           {/* Logo Image */}
-          <img src="/images/logo.png" alt="Logo" className="app-logo" />
+          <img src={logo} alt="Logo" className="app-logo" />
         </div>
 
         <div className="auth-header">
