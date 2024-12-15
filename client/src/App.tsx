@@ -1,10 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './pages/LoginSignUp';
+import LoginSignUp from './pages/LoginSignUp'; // Updated name for clarity
 import Dashboard from './pages/Dashboard';
 import ClassInfoPage from './pages/ClassInfoPage';
 import ProfilePage from './pages/ProfilePage';
+<<<<<<< HEAD
 import Contact from './pages/Contact';
+=======
+>>>>>>> 4fcbd82b045169b547651923cb96125324b0e337
 
 const App: React.FC = () => {
   // Dummy user data for the ProfilePage
@@ -15,7 +18,11 @@ const App: React.FC = () => {
     schedule: [
       {
         id: 1,
+<<<<<<< HEAD
         className: "Yoga Class",
+=======
+        className: "Yoga Class", // Dummy data
+>>>>>>> 4fcbd82b045169b547651923cb96125324b0e337
         time: "8:00 AM - 9:00 AM",
         instructor: "John Smith",
       },
@@ -26,10 +33,17 @@ const App: React.FC = () => {
         instructor: "Emily Brown",
       },
       {
+<<<<<<< HEAD
         id: 3, // Fixed duplicate ID
         className: "Spin Class",
         time: "12:00 PM - 1:00 PM",
         instructor: "Michael Lee",
+=======
+        id: 3,
+        className: "Spin Class",
+        time: "11:00 AM - 12:00 PM",
+        instructor: "Emily Brown",
+>>>>>>> 4fcbd82b045169b547651923cb96125324b0e337
       },
     ],
   };
@@ -38,7 +52,7 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginSignUp />} /> {/* Updated LoginSignUp */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/class-info" element={<ClassInfoPage />} />

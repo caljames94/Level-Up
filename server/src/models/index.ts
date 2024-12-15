@@ -1,10 +1,14 @@
 import sequelize from "../config/connection.js";
+
 import { UserFactory } from "./users.js";
+import { ClassFactory } from "./classes.js";
+import { BookingFactory } from "./bookings.js";
+import { User } from "./users.js"; // Import User model
+import { Class } from "./classes.js"; // Import Class model
 
-//Creates a User object. Passing sequelize as an argument so that sequelize can intialise that User into the database.
 const User = UserFactory(sequelize);
+const Class = ClassFactory(sequelize);
+const Booking = BookingFactory(sequelize);
 
 
-// Exports sequelize and User for use in other files (our routes and application to be used).
-export {sequelize, User };
-
+export { sequelize, User, Class, Booking };

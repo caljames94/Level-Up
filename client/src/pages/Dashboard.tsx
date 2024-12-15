@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Dashboard.css";
 import logo from "../assets/images/logo.png";
 import "../styles/navbar.css";
+<<<<<<< HEAD
 import { Link } from "react-router-dom"; // Import Link for navigation
+=======
+>>>>>>> 4fcbd82b045169b547651923cb96125324b0e337
 
 const Dashboard: React.FC = () => {
   const [level, setLevel] = useState(0);
+  const [classes, setClasses] = useState([]);
 
   const levels = ["Easy", "Medium", "Hard", "Extreme"];
 
@@ -35,6 +39,26 @@ const Dashboard: React.FC = () => {
     }
   };
 
+  // Function to get classes based on difficulty level
+  const fetchClasses = async (difficulty: string) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3001/api/classes/difficulty/${difficulty}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setClasses(data);
+    } catch (error) {
+      console.error("Error fetching classes", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchClasses(levels[level]);
+  }, [level]);
+
   const handleLevelChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLevel(Number(event.target.value));
   };
@@ -48,10 +72,22 @@ const Dashboard: React.FC = () => {
             <img src={logo} alt="Logo" className="logo-image" />
           </div>
           <ul className="navbar-links">
+<<<<<<< HEAD
             <li><Link to="#dashboard">Classes</Link></li> {/* Link to Dashboard */}
             <li><a href="/profile">Profile</a></li>
             <li><Link to="/contact">Contact</Link></li> 
             <li><a href="#">Logout</a></li>
+=======
+            <li>
+              <a href="#home">Classes</a>
+            </li>
+            <li>
+              <a href="#profile">Profile</a>
+            </li>
+            <li>
+              <a href="#classes">Logout</a>
+            </li>
+>>>>>>> 4fcbd82b045169b547651923cb96125324b0e337
           </ul>
         </nav>
 
@@ -95,6 +131,21 @@ const Dashboard: React.FC = () => {
               <p>
                 Selected Level: <strong>{levels[level]}</strong>
               </p>
+              <div className="classes-list">
+                <h2>{levels[level]} Classes</h2>
+                <ul>
+                  {classes.map((classItem: any) => (
+                    <li key={classItem.class_id}>
+                      <span>
+                        {classItem.class_name}
+                      </span>
+                      <span>
+                        Starts at: {classItem.start_time}
+                      </span>
+                      </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 
