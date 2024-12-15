@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3001/api"; // Adjust to your backend URL
+const API_URL = "http://localhost:3001/api/auth"; // Note the addition of '/auth'
 
 // Signup function
 export const signup = async (data: {
