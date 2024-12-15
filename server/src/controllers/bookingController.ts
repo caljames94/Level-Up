@@ -37,7 +37,7 @@ export const deleteBooking = async (req: Request, res: Response, next: NextFunct
             return;
         }
         await booking.destroy();
-        res.status(204).send();
+        res.status(200).send();
     } catch (err: any) {
         res.status(500).json({ error: 'Failed to delete booking' });
     }

@@ -90,5 +90,4 @@ export function ClassFactory(sequelize: Sequelize): typeof Class {
 
 }
 
-// Made updates to the class model and its factory to include a timestamp for the creation and update dates.
 
