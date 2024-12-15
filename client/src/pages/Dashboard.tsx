@@ -41,7 +41,7 @@ const Dashboard: React.FC = () => {
   const fetchClasses = async (difficulty: string) => {
     try {
       const response = await fetch(
-        `/api/classes/difficulty/${difficulty.toLowerCase()}`
+        `http://localhost:3001/api/classes/difficulty/${difficulty}`
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
