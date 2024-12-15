@@ -62,7 +62,7 @@ const LoginSignUp: React.FC = () => {
           {errorMessage && <p className="auth-error">{errorMessage}</p>}
           {activeTab === "login" ? (
             <form className="auth-form" onSubmit={handleLogin}>
-              <h2 className="auth-title">Welcome Back!</h2>
+              <h2 className="auth-title">Welcome to Level UP!</h2>
               <div className="auth-input-group">
                 <label className="auth-label">Email</label>
                 <input
@@ -138,6 +138,14 @@ const LoginSignUp: React.FC = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
+                />
+              </div>
+              <div className="auth-input-group">
+                <label className="auth-label">Profile Picture URL</label>
+                <input
+                  type="url"
+                  placeholder="Enter your profile picture URL"
+                  className="auth-input"
                 />
               </div>
               <button className="auth-button" type="submit">
