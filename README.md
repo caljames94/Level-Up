@@ -2,8 +2,8 @@
 
 Level Up is a dynamic fitness application that helps users choose workout classes based on their intensity preferences. Whether you’re a beginner or an experienced athlete, Level Up allows users to find and book the perfect classes tailored to their fitness needs. The app is built using modern web technologies and follows industry best practices.
 
-![Screenshot 1](screenshot/screenshot1.png)
-![Screenshot 2](screenshot/screenshot2.png)
+![Screenshot 1](Screenshots/screenshot1.png)
+![Screenshot 2](Screenshots/screenshot2.png)
 
 ## Features:
 
