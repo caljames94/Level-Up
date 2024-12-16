@@ -3,8 +3,8 @@ import { createBooking, getBookingsByUserId, deleteBooking } from '../../control
 
 const router = express.Router();
 
-router.post('/', createBooking);
 router.get('/user/:user_id', getBookingsByUserId);
+router.post('/', createBooking);
 router.delete('/:booking_id', deleteBooking);
 
 export { router as bookingRouter };

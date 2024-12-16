@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "../styles/Dashboard.css";
 import logo from "../assets/images/logo.png";
 import "../styles/navbar.css";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link, useNavigate } from "react-router-dom"; // Import Link for navigation
+
 
 const Dashboard: React.FC = () => {
   const [level, setLevel] = useState(0);
@@ -58,6 +59,13 @@ const Dashboard: React.FC = () => {
 
   const handleLevelChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLevel(Number(event.target.value));
+  };
+
+  // Additions to navigate to class info page when selecting a class for more information
+  const navigate = useNavigate();
+
+  const handleViewClass = (classId: number) => {
+    navigate(`/class-info/${classId}`);
   };
 
   return (
@@ -121,24 +129,18 @@ const Dashboard: React.FC = () => {
                 <ul>
                   {classes.map((classItem: any) => (
                     <li key={classItem.class_id}>
-                      <span>
-                        {classItem.class_name}
-                      </span>
-                      <span>
-                        Starts at: {classItem.start_time}
-                      </span>
-                      </li>
+                      <span> {classItem.class_name}</span>
+                      <span> Starts at: {classItem.start_time} </span>
+                      <button 
+                      className="view-class-button" 
+                      onClick={() => handleViewClass(classItem.class_id)}>
+                        View Class
+                        </button>
+                    </li>
                   ))}
                 </ul>
               </div>
             </div>
-          </div>
-
-          {/* View Class Button */}
-          <div className="view-class-button-container">
-            <Link to="/class-info">
-              <button className="view-class-button">View Class</button>
-            </Link>
           </div>
         </div>
       </div>
