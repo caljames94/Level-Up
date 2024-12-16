@@ -15,6 +15,29 @@ export const createBooking = async (req: Request, res: Response) => {
     }
 };
 
+// export const createBooking = async (req: Request, res: Response) => {
+//     try {
+//       const { user_id, class_id } = req.body;
+  
+//       // Check if the booking already exists
+//       const existingBooking = await Booking.findOne({ where: { user_id, class_id } });
+//       if (existingBooking) {
+//         return res.status(400).json({ error: 'You have already booked this class' });
+//       }
+  
+//       // Create the new booking
+//       const newBooking = await Booking.create({ 
+//         user_id, 
+//         class_id,
+//         booking_date: new Date() // Add this line to include the booking_date
+//       });
+  
+//       res.status(201).json(newBooking);
+//     } catch (err: any) {
+//       res.status(500).json({ error: 'Failed to create booking' });
+//     }
+//   };
+
 export const getBookingsByUserId = async (req: Request, res: Response) => {
     try {
         const { user_id } = req.params;

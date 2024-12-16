@@ -42,7 +42,7 @@ const App: React.FC = () => {
         <Route path="/login" element={<LoginSignUp />} /> {/* Updated LoginSignUp */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/class-info" element={<ClassInfoPage />} />
+        <Route path="/class-info/:classId" element={<ClassInfoPage />} />
         <Route path="/profile" element={<ProfilePage user={mockUser} />} />
       </Routes>
     </Router>
