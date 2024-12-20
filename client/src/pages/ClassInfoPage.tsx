@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import logo from "../assets/images/logo.png";
+import React, { useState, useEffect } from "react";
 import "../styles/styles.css";
 import "../styles/classInfoPage.css";
 import "../styles/navbar.css";
-import logo from "../assets/images/logo.png";
 
 interface ClassInfo {
+  class_id: number;
   class_name: string;
   instructor: string;
   description: string;
   start_time: string;
+  end_time: string;
 }
 
 const ClassInfoPage: React.FC = () => {
@@ -55,7 +57,6 @@ const ClassInfoPage: React.FC = () => {
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-          user_id: 1, // Replace with actual user ID from auth system
           class_id: Number(classId),
         }),
       });
@@ -103,12 +104,10 @@ const ClassInfoPage: React.FC = () => {
         <div className="class-info-columns">
           <div className="class-info-column">
             <h2>{classInfo.class_name}</h2>
-            <h3>Description:</h3>
-            <p>{classInfo.description}</p>
-            <h3>Instructor:</h3>
-            <p>{classInfo.instructor}</p>
-            <h3>Time:</h3>
-            <p>{classInfo.start_time}</p>
+            <p><strong>Instructor:</strong> {classInfo.instructor}</p>
+            <p><strong>Description:</strong> {classInfo.description}</p>
+            <p><strong>Start Time:</strong> {new Date(classInfo.start_time).toLocaleString()}</p>
+            <p><strong>End Time:</strong> {new Date(classInfo.end_time).toLocaleString()}</p>
           </div>
         </div>
 

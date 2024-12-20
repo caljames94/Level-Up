@@ -1,7 +1,5 @@
-
-
-import jwt, { JwtPayload, Secret } from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import jwt, { JwtPayload, Secret } from 'jsonwebtoken';
 
 dotenv.config(); 
 // Secret key from environment variables
@@ -9,8 +7,8 @@ const SECRET_KEY: Secret = process.env.JWT_SECRET || 'defaultsecret';
 
 // Define the payload type for better type safety
 export interface TokenPayload {
-    id: string;
-    username: string;
+    user_id: string;
+    email: string;
     [key: string]: any; // Allow additional fields if needed
 }
 
