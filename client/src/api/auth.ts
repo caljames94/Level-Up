@@ -20,7 +20,10 @@ export const signup = async (data: {
     throw new Error(errorData.error || "Signup failed");
   }
 
-  return response.json();
+  const responseData = await response.json();
+  localStorage.setItem("token", responseData.user.token);
+
+  return responseData;
 };
 
 // Login function
@@ -38,5 +41,20 @@ export const login = async (data: { email: string; password: string }) => {
     throw new Error(errorData.error || "Login failed");
   }
 
-  return response.json();
+  const responseData = await response.json();
+  localStorage.setItem("token", responseData.user.token);
+
+  return responseData;
+};
+
+export const getAuthToken = (): string | null => {
+  return localStorage.getItem("token");
+};
+
+export const setAuthToken = (token: string): void => {
+  localStorage.setItem("token", token);
+};
+
+export const removeAuthToken = (): void => {
+  localStorage.removeItem("token");
 };

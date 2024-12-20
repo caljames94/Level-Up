@@ -1,4 +1,4 @@
-import express, { Application } from 'express'; 
+import express, { Application } from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import authRoutes from './routes/authRoutes.js';
@@ -16,16 +16,24 @@ const app: Application = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
-app.use(cors({ origin: 'http://localhost:5173' })); // Enable CORS for frontend
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(routes);
+app.use(cors());
+app.use(express.json());
 
 // Routes
-app.use(routes);
 app.use('/api/auth', authRoutes);
 
+
 // Server Listener
-sequelize.sync() // Simple sync; tables are only created if they don't exist
+// app.listen(PORT, () => {
+//     console.log(`Server running on port ${PORT}`);
+// });
+
+// Server Listener
+sequelize.sync({ alter: true }) // Use { alter: true } to keep data intact
   .then(async () => {
     console.log('Database synchronized.');
 
