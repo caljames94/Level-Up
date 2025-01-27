@@ -32,6 +32,7 @@ const LoginSignUp: React.FC = () => {
         last_name: lastName,
         email,
         password,
+        // @ts-ignore
         profile_picture_url: profilePictureUrl, // Pass profile picture URL
       });
       navigate("/dashboard"); // Redirect to Dashboard page after signup

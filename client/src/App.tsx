@@ -9,31 +9,34 @@ import Contact from './pages/Contact';
 
 const App: React.FC = () => {
   // Dummy user data for the ProfilePage
-  const mockUser = {
-    name: "John Doe",
-    address: "123 Sussex Street, Sydney, NSW 2000",
-    profileImage: "https://via.placeholder.com/150", // Replace with user's profile image
-    schedule: [
-      {
-        id: 1,
-        className: "Yoga Class", // Dummy data
-        time: "8:00 AM - 9:00 AM",
-        instructor: "John Smith",
-      },
-      {
-        id: 2,
-        className: "Pilates",
-        time: "10:00 AM - 11:00 AM",
-        instructor: "Emily Brown",
-      },
-      {
-        id: 3,
-        className: "Spin Class",
-        time: "11:00 AM - 12:00 PM",
-        instructor: "Emily Brown",
-      },
-    ],
-  };
+  // const mockUser = {
+  //   name: "John Doe",
+  //   address: "123 Sussex Street, Sydney, NSW 2000",
+  //   profileImage: "https://via.placeholder.com/150", // Replace with user's profile image
+  //   schedule: [
+  //     {
+  //       booking_id: 1,
+  //       className: "Yoga Class",
+  //       start_time: "8:00 AM",
+  //       end_time:"9:00 AM",
+  //       instructor: "John Smith",
+  //     },
+  //     {
+  //       booking_id: 2,
+  //       className: "Pilates",
+  //       start_time: "10:00 AM",
+  //       end_time:"11:00 AM",
+  //       instructor: "Emily Brown",
+  //     },
+  //     {
+  //       booking_id: 3,
+  //       className: "Spin Class",
+  //       start_time: "11:00 AM",
+  //       end_time:"12:00 AM",
+  //       instructor: "Emily Brown",
+  //     },
+  //   ],
+  // };
 
   return (
     <Router>
@@ -43,7 +46,7 @@ const App: React.FC = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/class-info/:classId" element={<ClassInfoPage />} />
-        <Route path="/profile" element={<ProfilePage user={mockUser} />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </Router>
   );

@@ -7,9 +7,13 @@ import sequelize from './config/connection.js';
 import seedClasses from './seeds/classes.js';
 import seedUsers from './seeds/users.js';
 import seedBookings from './seeds/bookings.js';
-
+import path from 'path';
+import { fileURLToPath } from 'url';
 // Load environment variables
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Initialize Express App
 const app: Application = express();
@@ -23,8 +27,16 @@ app.use(routes);
 app.use(cors());
 app.use(express.json());
 
+const clientBuildPath = path.join(__dirname, '../../client/dist');
+  app.use(express.static(clientBuildPath));
+
+  app.get('*', (_, res) => {
+    res.sendFile(path.join(clientBuildPath, 'index.html'));
+  });
+
 // Routes
 app.use('/api/auth', authRoutes);
+
 
 
 // Server Listener

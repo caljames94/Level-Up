@@ -12,6 +12,7 @@ type ClassSchedule = {
   instructor: string;
 };
 
+
 type UserProfile = {
   name: string;
   address: string;
