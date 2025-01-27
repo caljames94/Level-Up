@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from "../assets/images/logo.png";
-import "../styles/contact.css";
+import "../styles/Contact.css";
 import { Link } from "react-router-dom"; // Import Link for navigation
 
 const Contact: React.FC = () => {
