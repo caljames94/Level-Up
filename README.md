@@ -132,15 +132,17 @@ npm run dev
 
 The app is deployed on Render, providing a production environment where both the backend API and PostgreSQL database are hosted.
 
-Live App URL: [https://level-up-wdjr.onrender.com/login]
+**Live App URL:** [Level Up](https://level-up-wdjr.onrender.com/login)
 
 ## Collaboration:
 
-The project was developed collaboratively, with contributions from all group members. There are no major disparities in GitHub contributions, and tasks were shared equally among the team.
+The project was developed collaboratively and tasks were shared among the team.
 
-## Contributing:
+### **Contributors**
+- [Sababa Tasnim](https://github.com/AlgoMystique) – Frontend/UI/UX Design
+- [Robbie Minty](https://github.com/caljames94) – Backend/JWT Token authentication
+- [Callum James](https://github.com/Robbie1080) – Backend/API integration 
 
-If you would like to contribute, feel free to fork the repository and submit a pull request. Please follow the project’s coding standards and provide tests for new features or bug fixes.
 
 ## License:
 
