@@ -14,11 +14,11 @@ Level Up is a dynamic fitness application that helps users choose workout classe
 
 ## Technologies Used:
 
+- **Frontend**: React, TypeScript
 - **Backend**: Node.js, Express.js, PostgreSQL, Sequelize ORM, JWT Authentication
-- **Frontend**: React, TypeScript, Vite
-- **Deployment**: Render
 - **Database**: PostgreSQL
-
+- **Deployment**: Render
+    
 ## API Endpoints:
 
 The backend API provides both **GET** and **POST** routes for retrieving and adding data, utilizing **two server-side APIs** for additional functionality.
@@ -26,16 +26,16 @@ The backend API provides both **GET** and **POST** routes for retrieving and add
 
 ## Authentication:
 
-JWT (JSON Web Tokens) is used for secure authentication. Users log in, and a token is issued. 
+JWT (JSON Web Tokens) is used for secure authentication for user login and registration. 
 
 ## Environment Variables:
 
-Sensitive information, like database credentials and API keys, is securely stored in environment variables.
+ Database credentials and API keys are securely stored in environment variables.
 
 Example:
 ```
-DATABASE_URL=your_database_url
-JWT_SECRET=your_jwt_secret 
+DATABASE_URL=my_database_url
+JWT_SECRET=my_jwt_secret 
 ```
 ## Folder Structure:
 
@@ -132,7 +132,7 @@ npm run dev
 
 The app is deployed on Render, providing a production environment where both the backend API and PostgreSQL database are hosted.
 
-Live App URL: [(https://level-up-wdjr.onrender.com/login)
+Live App URL: [https://level-up-wdjr.onrender.com/login]
 
 ## Collaboration:
 
