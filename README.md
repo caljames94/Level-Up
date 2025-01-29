@@ -95,15 +95,12 @@ The project follows the separation of concerns principle. The backend and fronte
 
 -PostgreSQL
 
--Vite
-
--JWT Authentication
 
 ## Installation:
 
 1.Clone the repository:
 ```
-git clone https://github.com/yourusername/level-up.git
+git clone 
 cd level-up
 ```
 2.Install dependencies:
